@@ -21,6 +21,7 @@ final class AppCoordinator: Coordinator {
 
     func start() {
         let searchVC = SearchViewController.instantiate()
+        searchVC.viewModel = MockEventSearchViewModel()
         navigationController.pushViewController(searchVC, animated: true)
     }
 }

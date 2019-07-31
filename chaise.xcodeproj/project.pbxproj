@@ -23,6 +23,8 @@
 		7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679A922F1383B00A847F9 /* EventsRemote.swift */; };
 		7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679AD22F1413D00A847F9 /* VenueRemote.swift */; };
 		7EF679B022F1414400A847F9 /* PerformerRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679AF22F1414400A847F9 /* PerformerRemote.swift */; };
+		7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679B222F14CDE00A847F9 /* EventSearchViewModel.swift */; };
+		7EF679B522F1DB3900A847F9 /* EventSearching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679B422F1DB3900A847F9 /* EventSearching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		7EF679A922F1383B00A847F9 /* EventsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRemote.swift; sourceTree = "<group>"; };
 		7EF679AD22F1413D00A847F9 /* VenueRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRemote.swift; sourceTree = "<group>"; };
 		7EF679AF22F1414400A847F9 /* PerformerRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformerRemote.swift; sourceTree = "<group>"; };
+		7EF679B222F14CDE00A847F9 /* EventSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchViewModel.swift; sourceTree = "<group>"; };
+		7EF679B422F1DB3900A847F9 /* EventSearching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				7EF679A322F134A900A847F9 /* Networking */,
 				7EF6799522F11D7600A847F9 /* Coordinators */,
 				7EF6799422F11C3300A847F9 /* View Controllers */,
+				7EF679B122F14CD100A847F9 /* View Models */,
 				7EF6799C22F128F000A847F9 /* Cells */,
 				7EF6799322F11C2100A847F9 /* Storyboards */,
 				7EF6799222F11C0900A847F9 /* Supporting Files */,
@@ -196,6 +201,15 @@
 				7EF679A722F134EC00A847F9 /* EventEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		7EF679B122F14CD100A847F9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				7EF679B422F1DB3900A847F9 /* EventSearching.swift */,
+				7EF679B222F14CDE00A847F9 /* EventSearchViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +319,9 @@
 				7EF679A622F134E200A847F9 /* EventRemote.swift in Sources */,
 				7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */,
 				7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */,
+				7EF679B522F1DB3900A847F9 /* EventSearching.swift in Sources */,
 				7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */,
+				7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
 				7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */,
 				7EF679A122F1293A00A847F9 /* SearchResultCell.swift in Sources */,
