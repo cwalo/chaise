@@ -14,6 +14,8 @@ class SearchViewController: UITableViewController, Storyboarded {
 
     var viewModel: EventSearching!
 
+    let searchController = UISearchController(searchResultsController: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +32,12 @@ class SearchViewController: UITableViewController, Storyboarded {
     }
 
     func setupSearchController() {
-        
+        searchController.searchBar.placeholder = "Search for an Event"
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
     }
 
     func addViewModelCallbacks() {
@@ -44,13 +51,19 @@ class SearchViewController: UITableViewController, Storyboarded {
                 print("searching: show activity indicator")
             case .loaded:
                 print("loaded: hide empty state")
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .loadingMore:
                 print("loading more")
             case .error(let error):
                 print(error)
             }
         }
+    }
+
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchController.searchBar.resignFirstResponder()
     }
 
     // MARK: UITableViewControllerDelegate & UITableViewControllerDatasource
@@ -66,11 +79,13 @@ class SearchViewController: UITableViewController, Storyboarded {
             fatalError("Falied to dequeue cell: \(SearchResultCell.reuseIdentifier)")
         }
 
-        // check if at end of tableView and can load more results
-        // ...
-        //
+        let row = indexPath.item
+        
+        if row == viewModel.events.count - 1 &&  viewModel.canFetchMore {
+            viewModel.fetchMoreResults()
+        }
 
-        let item = viewModel.events[indexPath.item]
+        let item = viewModel.events[row]
 
         cell.titleLabel.text = item.title
         cell.locationLabel.text = item.location
@@ -84,5 +99,15 @@ class SearchViewController: UITableViewController, Storyboarded {
         let item = viewModel.events[indexPath.item]
     }
 
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(for: searchText)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.resignFirstResponder()
+    }
 }
 

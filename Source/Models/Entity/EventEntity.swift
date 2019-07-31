@@ -19,3 +19,19 @@ struct EventEntity: Codable {
     var isFavorite: Bool
     
 }
+
+extension EventEntity {
+    static var mock: EventEntity = {
+        let randomID = Int.random(in: 0...100)
+        let randomBoolean = [true, false].randomElement()!
+        let event = EventEntity(id: randomID,
+                                title: "Beyonce vs. Rihanna",
+                                location: "Austin, TX",
+                                date: Date(),
+                                isTBD: false,
+                                imageURL: URL(string: "https://seatgeek.com/images/performers-landscape/beyonce-vs-rihanna-92adef/559309/huge.jpg")!,
+                                isFavorite: randomBoolean)
+
+        return event
+    }()
+}

@@ -13,6 +13,7 @@
 		7E0B20FD22F008B70061B2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0B20FC22F008B70061B2D7 /* Assets.xcassets */; };
 		7E0B210022F008B70061B2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0B20FE22F008B70061B2D7 /* LaunchScreen.storyboard */; };
 		7E0B210B22F008B70061B2D7 /* chaiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B210A22F008B70061B2D7 /* chaiseTests.swift */; };
+		7EEC90B822F21D6A00DA1B8A /* MockEventSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -48,6 +49,7 @@
 		7E0B210622F008B70061B2D7 /* chaiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chaiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0B210A22F008B70061B2D7 /* chaiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chaiseTests.swift; sourceTree = "<group>"; };
 		7E0B210C22F008B70061B2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEventSearchViewModel.swift; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				7EF679B422F1DB3900A847F9 /* EventSearching.swift */,
 				7EF679B222F14CDE00A847F9 /* EventSearchViewModel.swift */,
+				7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */,
 				7EF679B522F1DB3900A847F9 /* EventSearching.swift in Sources */,
 				7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */,
+				7EEC90B822F21D6A00DA1B8A /* MockEventSearchViewModel.swift in Sources */,
 				7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
 				7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */,
