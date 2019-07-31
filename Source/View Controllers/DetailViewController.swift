@@ -21,7 +21,7 @@ class DetailViewController: UIViewController, Storyboarded {
 
         title = event.title
 
-        imageView.image = nil
+        imageView.setImage(from: event.imageURL)
         dateLabel.text = String(describing: event.date)
         locationLabel.text = event.location
     }

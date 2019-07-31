@@ -37,6 +37,6 @@ class SearchResultCell: UITableViewCell {
         titleLabel.text = data.title
         locationLabel.text = data.location
         dateLabel.text = data.date.description
-        eventImageView.image = nil
+        eventImageView.setImage(from: data.imageURL)
     }
 }
