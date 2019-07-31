@@ -18,6 +18,11 @@
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
 		7EF679A122F1293A00A847F9 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799F22F1293A00A847F9 /* SearchResultCell.swift */; };
 		7EF679A222F1293A00A847F9 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF679A022F1293A00A847F9 /* SearchResultCell.xib */; };
+		7EF679A622F134E200A847F9 /* EventRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679A522F134E200A847F9 /* EventRemote.swift */; };
+		7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679A722F134EC00A847F9 /* EventEntity.swift */; };
+		7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679A922F1383B00A847F9 /* EventsRemote.swift */; };
+		7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679AD22F1413D00A847F9 /* VenueRemote.swift */; };
+		7EF679B022F1414400A847F9 /* PerformerRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF679AF22F1414400A847F9 /* PerformerRemote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7EF6799F22F1293A00A847F9 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		7EF679A022F1293A00A847F9 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		7EF679A522F134E200A847F9 /* EventRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRemote.swift; sourceTree = "<group>"; };
+		7EF679A722F134EC00A847F9 /* EventEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
+		7EF679A922F1383B00A847F9 /* EventsRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRemote.swift; sourceTree = "<group>"; };
+		7EF679AD22F1413D00A847F9 /* VenueRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRemote.swift; sourceTree = "<group>"; };
+		7EF679AF22F1414400A847F9 /* PerformerRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformerRemote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				7E0B20F522F008B50061B2D7 /* AppDelegate.swift */,
+				7EF679A422F134CE00A847F9 /* Models */,
+				7EF679A322F134A900A847F9 /* Networking */,
 				7EF6799522F11D7600A847F9 /* Coordinators */,
 				7EF6799422F11C3300A847F9 /* View Controllers */,
 				7EF6799C22F128F000A847F9 /* Cells */,
@@ -149,6 +161,41 @@
 				7EF679A022F1293A00A847F9 /* SearchResultCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7EF679A322F134A900A847F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7EF679A422F134CE00A847F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7EF679AB22F13BB400A847F9 /* Remote */,
+				7EF679AC22F13BC200A847F9 /* Entity */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7EF679AB22F13BB400A847F9 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				7EF679A922F1383B00A847F9 /* EventsRemote.swift */,
+				7EF679A522F134E200A847F9 /* EventRemote.swift */,
+				7EF679AF22F1414400A847F9 /* PerformerRemote.swift */,
+				7EF679AD22F1413D00A847F9 /* VenueRemote.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		7EF679AC22F13BC200A847F9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7EF679A722F134EC00A847F9 /* EventEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +302,15 @@
 			files = (
 				7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */,
 				7E0B20F822F008B50061B2D7 /* SearchViewController.swift in Sources */,
+				7EF679A622F134E200A847F9 /* EventRemote.swift in Sources */,
+				7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */,
+				7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */,
 				7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
+				7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */,
 				7EF679A122F1293A00A847F9 /* SearchResultCell.swift in Sources */,
 				7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */,
+				7EF679B022F1414400A847F9 /* PerformerRemote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
