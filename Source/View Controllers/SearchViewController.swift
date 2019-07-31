@@ -12,6 +12,7 @@ class SearchViewController: UITableViewController, Storyboarded {
 
     // MARK: View Life Cycle
 
+    weak var coordinator: EventSelecting?
     var viewModel: EventSearching!
 
     let searchController = UISearchController(searchResultsController: nil)
@@ -96,7 +97,8 @@ class SearchViewController: UITableViewController, Storyboarded {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = viewModel.events[indexPath.item]
+        let event = viewModel.events[indexPath.item]
+        coordinator?.didSelectEvent(event)
     }
 
 }

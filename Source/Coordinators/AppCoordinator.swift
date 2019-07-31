@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EventSelecting: AnyObject {
+    func didSelectEvent(_ event: EventEntity)
+}
+
 final class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController
@@ -21,7 +25,16 @@ final class AppCoordinator: Coordinator {
 
     func start() {
         let searchVC = SearchViewController.instantiate()
+        searchVC.coordinator = self
         searchVC.viewModel = MockEventSearchViewModel()
         navigationController.pushViewController(searchVC, animated: true)
+    }
+}
+
+extension AppCoordinator: EventSelecting {
+    func didSelectEvent(_ event: EventEntity) {
+        let detailVC = DetailViewController.instantiate()
+        detailVC.event = event
+        navigationController.pushViewController(detailVC, animated: true)
     }
 }
