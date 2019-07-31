@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct SearchResultCellData {
+    let imageURL: URL
+    let title: String
+    let location: String
+    let date: Date
+}
+
 class SearchResultCell: UITableViewCell {
 
     @IBOutlet weak var eventImageView: UIImageView!
@@ -18,5 +25,18 @@ class SearchResultCell: UITableViewCell {
     static var reuseIdentifier: String {
         return "SearchResultCell"
     }
-    
+
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        locationLabel.text = ""
+        dateLabel.text = ""
+        eventImageView.image = nil
+    }
+
+    func configure(with data: SearchResultCellData) {
+        titleLabel.text = data.title
+        locationLabel.text = data.location
+        dateLabel.text = data.date.description
+        eventImageView.image = nil
+    }
 }

@@ -87,11 +87,11 @@ class SearchViewController: UITableViewController, Storyboarded {
         }
 
         let item = viewModel.events[row]
-
-        cell.titleLabel.text = item.title
-        cell.locationLabel.text = item.location
-        cell.dateLabel.text = item.date.description
-        cell.eventImageView.image = nil
+        let cellData = SearchResultCellData(imageURL: item.imageURL,
+                                            title: item.title,
+                                            location: item.location,
+                                            date: item.date)
+        cell.configure(with: cellData)
 
         return cell
     }
