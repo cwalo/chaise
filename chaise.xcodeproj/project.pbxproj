@@ -59,7 +59,7 @@
 		7E0B20E922F008B50061B2D7 = {
 			isa = PBXGroup;
 			children = (
-				7E0B20F422F008B50061B2D7 /* chaise */,
+				7E0B20F422F008B50061B2D7 /* Source */,
 				7E0B210922F008B70061B2D7 /* chaiseTests */,
 				7E0B20F322F008B50061B2D7 /* Products */,
 			);
@@ -74,17 +74,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7E0B20F422F008B50061B2D7 /* chaise */ = {
+		7E0B20F422F008B50061B2D7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				7E0B20F522F008B50061B2D7 /* AppDelegate.swift */,
-				7E0B20F722F008B50061B2D7 /* ViewController.swift */,
-				7E0B20F922F008B50061B2D7 /* Main.storyboard */,
-				7E0B20FC22F008B70061B2D7 /* Assets.xcassets */,
-				7E0B20FE22F008B70061B2D7 /* LaunchScreen.storyboard */,
-				7E0B210122F008B70061B2D7 /* Info.plist */,
+				7EF6799422F11C3300A847F9 /* View Controllers */,
+				7EF6799322F11C2100A847F9 /* Storyboards */,
+				7EF6799222F11C0900A847F9 /* Supporting Files */,
 			);
-			path = chaise;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		7E0B210922F008B70061B2D7 /* chaiseTests */ = {
@@ -94,6 +92,32 @@
 				7E0B210C22F008B70061B2D7 /* Info.plist */,
 			);
 			path = chaiseTests;
+			sourceTree = "<group>";
+		};
+		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E0B20FC22F008B70061B2D7 /* Assets.xcassets */,
+				7E0B210122F008B70061B2D7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EF6799322F11C2100A847F9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7E0B20F922F008B50061B2D7 /* Main.storyboard */,
+				7E0B20FE22F008B70061B2D7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7EF6799422F11C3300A847F9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E0B20F722F008B50061B2D7 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
-				INFOPLIST_FILE = chaise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
-				INFOPLIST_FILE = chaise/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
