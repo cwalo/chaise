@@ -42,8 +42,10 @@ final class MockEventSearchViewModel: EventSearching {
                 results.append(event)
             }
 
-            self.events = results
-            self.state = .loaded
+            DispatchQueue.main.async {
+                self.events = results
+                self.state = .loaded
+            }
         }
     }
 
@@ -59,8 +61,10 @@ final class MockEventSearchViewModel: EventSearching {
                 results.append(event)
             }
 
-            self.events.append(contentsOf: results)
-            self.state = .loaded
+            DispatchQueue.main.async {
+                self.events.append(contentsOf: results)
+                self.state = .loaded
+            }
         }
     }
 }

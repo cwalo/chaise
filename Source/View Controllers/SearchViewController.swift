@@ -52,9 +52,7 @@ class SearchViewController: UITableViewController, Storyboarded {
                 print("searching: show activity indicator")
             case .loaded:
                 print("loaded: hide empty state")
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
             case .loadingMore:
                 print("loading more")
             case .error(let error):
