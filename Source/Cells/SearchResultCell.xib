@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="LEw-C3-Wo3">
-                        <rect key="frame" x="118" y="15" width="73" height="91"/>
+                        <rect key="frame" x="118" y="15" width="262" height="91"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-df-Wdq">
                                 <rect key="frame" x="0.0" y="0.0" width="73" height="36"/>
@@ -57,7 +57,7 @@
                     <constraint firstItem="r3P-u5-MVX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aOw-tw-DqA"/>
                     <constraint firstItem="r3P-u5-MVX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="bqQ-NM-waI"/>
                     <constraint firstItem="LEw-C3-Wo3" firstAttribute="leading" secondItem="r3P-u5-MVX" secondAttribute="trailing" constant="8" id="db4-02-OOO"/>
-                    <constraint firstAttribute="trailing" secondItem="LEw-C3-Wo3" secondAttribute="trailing" constant="209" id="hpn-VD-s9Z"/>
+                    <constraint firstAttribute="trailing" secondItem="LEw-C3-Wo3" secondAttribute="trailing" constant="20" id="hpn-VD-s9Z"/>
                     <constraint firstAttribute="bottom" secondItem="LEw-C3-Wo3" secondAttribute="bottom" constant="13.5" id="wF5-ez-feQ"/>
                 </constraints>
             </tableViewCellContentView>
