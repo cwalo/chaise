@@ -28,6 +28,8 @@
 		7EEC90E822F3353500DA1B8A /* SeatGeekCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */; };
 		7EEC90EB22F349C500DA1B8A /* DateFormatter+ISONoZulu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90E922F3490700DA1B8A /* DateFormatter+ISONoZulu.swift */; };
 		7EEC90ED22F363F100DA1B8A /* ISO8601NoZuluTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */; };
+		7EEC90F222F372F600DA1B8A /* SeatGeekDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */; };
+		7EEC90F322F372FD00DA1B8A /* SeatGeekSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -78,6 +80,8 @@
 		7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekCredentials.swift; sourceTree = "<group>"; };
 		7EEC90E922F3490700DA1B8A /* DateFormatter+ISONoZulu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+ISONoZulu.swift"; sourceTree = "<group>"; };
 		7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601NoZuluTests.swift; sourceTree = "<group>"; };
+		7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekDataMock.swift; sourceTree = "<group>"; };
+		7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeatGeekSearch.json; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				7EEC90D022F2A03F00DA1B8A /* SeatGeek.swift */,
+				7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */,
 				7E0B20FC22F008B70061B2D7 /* Assets.xcassets */,
 				7E0B210122F008B70061B2D7 /* Info.plist */,
 			);
@@ -386,6 +392,7 @@
 				7E0B20FD22F008B70061B2D7 /* Assets.xcassets in Resources */,
 				7EF679A222F1293A00A847F9 /* SearchResultCell.xib in Resources */,
 				7E0B20FB22F008B50061B2D7 /* Main.storyboard in Resources */,
+				7EEC90F322F372FD00DA1B8A /* SeatGeekSearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +455,7 @@
 				7EF679A122F1293A00A847F9 /* SearchResultCell.swift in Sources */,
 				7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */,
 				7EEC90BA22F225D800DA1B8A /* DetailViewController.swift in Sources */,
+				7EEC90F222F372F600DA1B8A /* SeatGeekDataMock.swift in Sources */,
 				7EF679B022F1414400A847F9 /* PerformerRemote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,7 +48,7 @@ enum SeatGeek: TargetType {
     }
 
     var sampleData: Data {
-        return "".data(using: .utf8)!
+        return SeatGeekDataMock.searchData
     }
 
 }
