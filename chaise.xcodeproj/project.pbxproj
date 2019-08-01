@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,9 @@
 		7EEC90BE22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90BD22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift */; };
 		7EEC90C222F24AC100DA1B8A /* UIView+NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90C122F24AC100DA1B8A /* UIView+NibLoading.swift */; };
 		7EEC90C422F2532D00DA1B8A /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90C322F2532D00DA1B8A /* DetailViewControllerTests.swift */; };
+		7EEC90C922F2999200DA1B8A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C622F2999200DA1B8A /* Alamofire.framework */; };
+		7EEC90CA22F2999200DA1B8A /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C722F2999200DA1B8A /* Moya.framework */; };
+		7EEC90CB22F2999200DA1B8A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C822F2999200DA1B8A /* Result.framework */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -60,6 +63,9 @@
 		7EEC90BD22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageFetcher.swift"; sourceTree = "<group>"; };
 		7EEC90C122F24AC100DA1B8A /* UIView+NibLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoading.swift"; sourceTree = "<group>"; };
 		7EEC90C322F2532D00DA1B8A /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		7EEC90C622F2999200DA1B8A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7EEC90C722F2999200DA1B8A /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		7EEC90C822F2999200DA1B8A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEC90C922F2999200DA1B8A /* Alamofire.framework in Frameworks */,
+				7EEC90CA22F2999200DA1B8A /* Moya.framework in Frameworks */,
+				7EEC90CB22F2999200DA1B8A /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +107,7 @@
 				7E0B20F422F008B50061B2D7 /* Source */,
 				7E0B210922F008B70061B2D7 /* chaiseTests */,
 				7E0B20F322F008B50061B2D7 /* Products */,
+				7EEC90C522F2999200DA1B8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +162,16 @@
 				7EEC90C122F24AC100DA1B8A /* UIView+NibLoading.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7EEC90C522F2999200DA1B8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC90C622F2999200DA1B8A /* Alamofire.framework */,
+				7EEC90C722F2999200DA1B8A /* Moya.framework */,
+				7EEC90C822F2999200DA1B8A /* Result.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
@@ -256,6 +276,7 @@
 				7E0B20EE22F008B50061B2D7 /* Sources */,
 				7E0B20EF22F008B50061B2D7 /* Frameworks */,
 				7E0B20F022F008B50061B2D7 /* Resources */,
+				7EEC90CC22F299B500DA1B8A /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +363,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7EEC90CC22F299B500DA1B8A /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/xcfilelists/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+				"$(SRCROOT)/xcfilelists/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E0B20EE22F008B50061B2D7 /* Sources */ = {
@@ -530,6 +574,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,6 +596,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
