@@ -36,6 +36,7 @@
 		7EEC90FC22F3840B00DA1B8A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C822F2999200DA1B8A /* Result.framework */; };
 		7EEC910022F3939500DA1B8A /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90FE22F3904900DA1B8A /* FavoritesManager.swift */; };
 		7EEC910222F3A29200DA1B8A /* JSONFileStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC910122F3A29200DA1B8A /* JSONFileStoring.swift */; };
+		7EEC910522F3AB9F00DA1B8A /* FavoriteManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC910422F3AB9F00DA1B8A /* FavoriteManagerTests.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -91,6 +92,7 @@
 		7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchViewModelTests.swift; sourceTree = "<group>"; };
 		7EEC90FE22F3904900DA1B8A /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		7EEC910122F3A29200DA1B8A /* JSONFileStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileStoring.swift; sourceTree = "<group>"; };
+		7EEC910422F3AB9F00DA1B8A /* FavoriteManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManagerTests.swift; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				7EEC90C322F2532D00DA1B8A /* DetailViewControllerTests.swift */,
 				7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */,
 				7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */,
+				7EEC910422F3AB9F00DA1B8A /* FavoriteManagerTests.swift */,
 				7E0B210C22F008B70061B2D7 /* Info.plist */,
 			);
 			path = chaiseTests;
@@ -506,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0B210B22F008B70061B2D7 /* SearchResultCellTests.swift in Sources */,
+				7EEC910522F3AB9F00DA1B8A /* FavoriteManagerTests.swift in Sources */,
 				7EEC90F822F37D7B00DA1B8A /* EventSearchViewModelTests.swift in Sources */,
 				7EEC90ED22F363F100DA1B8A /* ISO8601NoZuluTests.swift in Sources */,
 				7EEC90C422F2532D00DA1B8A /* DetailViewControllerTests.swift in Sources */,

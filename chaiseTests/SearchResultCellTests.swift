@@ -19,11 +19,13 @@ class SearchResultCellTests: XCTestCase {
         let title = "Beyonce vs. Rihanna"
         let location = "Austin, TX"
         let date = Date()
+        let isFavorite = false
 
         cellData = SearchResultCellData(imageURL: imageURL,
                                         title: title,
                                         location: location,
-                                        date: date)
+                                        date: date,
+                                        isFavorite: isFavorite)
 
         cell = SearchResultCell.instantiate()
     }
@@ -49,7 +51,8 @@ class SearchResultCellTests: XCTestCase {
         cellData = SearchResultCellData(imageURL: cellData.imageURL,
                                         title: cellData.title,
                                         location: cellData.location,
-                                        date: nil)
+                                        date: nil,
+                                        isFavorite: cellData.isFavorite)
 
         cell.configure(with: cellData)
 
