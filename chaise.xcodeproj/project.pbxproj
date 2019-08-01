@@ -34,6 +34,7 @@
 		7EEC90FA22F3840B00DA1B8A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C622F2999200DA1B8A /* Alamofire.framework */; };
 		7EEC90FB22F3840B00DA1B8A /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C722F2999200DA1B8A /* Moya.framework */; };
 		7EEC90FC22F3840B00DA1B8A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C822F2999200DA1B8A /* Result.framework */; };
+		7EEC910022F3939500DA1B8A /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90FE22F3904900DA1B8A /* FavoritesManager.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -87,6 +88,7 @@
 		7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeatGeekSearch.json; sourceTree = "<group>"; };
 		7EEC90F522F37B9000DA1B8A /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchViewModelTests.swift; sourceTree = "<group>"; };
+		7EEC90FE22F3904900DA1B8A /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0B20F522F008B50061B2D7 /* AppDelegate.swift */,
+				7EEC90FE22F3904900DA1B8A /* FavoritesManager.swift */,
 				7EF679A422F134CE00A847F9 /* Models */,
 				7EF679A322F134A900A847F9 /* Networking */,
 				7EEC90FD22F38EAF00DA1B8A /* Frontend */,
@@ -459,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */,
+				7EEC910022F3939500DA1B8A /* FavoritesManager.swift in Sources */,
 				7EEC90BC22F2349300DA1B8A /* ImageFetcher.swift in Sources */,
 				7E0B20F822F008B50061B2D7 /* SearchViewController.swift in Sources */,
 				7EEC90E822F3353500DA1B8A /* SeatGeekCredentials.swift in Sources */,
