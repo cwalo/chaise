@@ -13,7 +13,6 @@
 		7E0B20FD22F008B70061B2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0B20FC22F008B70061B2D7 /* Assets.xcassets */; };
 		7E0B210022F008B70061B2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0B20FE22F008B70061B2D7 /* LaunchScreen.storyboard */; };
 		7E0B210B22F008B70061B2D7 /* SearchResultCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B210A22F008B70061B2D7 /* SearchResultCellTests.swift */; };
-		7EEC90B822F21D6A00DA1B8A /* MockEventSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */; };
 		7EEC90BA22F225D800DA1B8A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90B922F225D800DA1B8A /* DetailViewController.swift */; };
 		7EEC90BC22F2349300DA1B8A /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90BB22F2349300DA1B8A /* ImageFetcher.swift */; };
 		7EEC90BE22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90BD22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift */; };
@@ -70,7 +69,6 @@
 		7E0B210622F008B70061B2D7 /* chaiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chaiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0B210A22F008B70061B2D7 /* SearchResultCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCellTests.swift; sourceTree = "<group>"; };
 		7E0B210C22F008B70061B2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEventSearchViewModel.swift; sourceTree = "<group>"; };
 		7EEC90B922F225D800DA1B8A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7EEC90BB22F2349300DA1B8A /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		7EEC90BD22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageFetcher.swift"; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 			children = (
 				7EF679B422F1DB3900A847F9 /* EventSearching.swift */,
 				7EF679B222F14CDE00A847F9 /* EventSearchViewModel.swift */,
-				7EEC90B722F21D6A00DA1B8A /* MockEventSearchViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -465,7 +462,6 @@
 				7EF679B522F1DB3900A847F9 /* EventSearching.swift in Sources */,
 				7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */,
 				7EEC90BE22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift in Sources */,
-				7EEC90B822F21D6A00DA1B8A /* MockEventSearchViewModel.swift in Sources */,
 				7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
 				7EEC90DE22F2A77E00DA1B8A /* SeatGeek.swift in Sources */,
