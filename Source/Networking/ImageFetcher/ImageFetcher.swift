@@ -9,14 +9,11 @@
 import UIKit
 
 protocol ImageFetching {
+    var imageCache: NSCache<NSString, UIImage> { get }
     func fetchImage(at url: URL, completion: @escaping (Result<UIImage, Error>) -> Void)
 }
 
-final class ImageFetcher: ImageFetching {
-
-    static let shared = ImageFetcher()
-
-    let imageCache = NSCache<NSString, UIImage>()
+extension ImageFetching {
 
     func fetchImage(at url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {
 
@@ -38,5 +35,11 @@ final class ImageFetcher: ImageFetching {
 
         task.resume()
     }
+}
 
+final class ImageFetcher: ImageFetching {
+
+    static let shared = ImageFetcher()
+
+    let imageCache = NSCache<NSString, UIImage>()
 }

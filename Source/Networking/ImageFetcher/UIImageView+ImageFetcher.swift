@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIImageView {
-    func setImage(from url: URL) {
-        ImageFetcher.shared.fetchImage(at: url) { result in
+    func setImage(from url: URL, using fetcher: ImageFetching = ImageFetcher.shared) {
+        fetcher.fetchImage(at: url) { result in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {
