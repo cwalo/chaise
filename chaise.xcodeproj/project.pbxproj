@@ -22,6 +22,9 @@
 		7EEC90C922F2999200DA1B8A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C622F2999200DA1B8A /* Alamofire.framework */; };
 		7EEC90CA22F2999200DA1B8A /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C722F2999200DA1B8A /* Moya.framework */; };
 		7EEC90CB22F2999200DA1B8A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C822F2999200DA1B8A /* Result.framework */; };
+		7EEC90D822F2A66A00DA1B8A /* APICredentialsPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90D622F2A48400DA1B8A /* APICredentialsPlugin.swift */; };
+		7EEC90DB22F2A6D800DA1B8A /* URL+QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */; };
+		7EEC90DE22F2A77E00DA1B8A /* SeatGeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90D022F2A03F00DA1B8A /* SeatGeek.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -66,6 +69,9 @@
 		7EEC90C622F2999200DA1B8A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7EEC90C722F2999200DA1B8A /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		7EEC90C822F2999200DA1B8A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7EEC90D022F2A03F00DA1B8A /* SeatGeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeek.swift; sourceTree = "<group>"; };
+		7EEC90D622F2A48400DA1B8A /* APICredentialsPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentialsPlugin.swift; sourceTree = "<group>"; };
+		7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryItems.swift"; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -124,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				7E0B20F522F008B50061B2D7 /* AppDelegate.swift */,
-				7EEC90C022F24AB300DA1B8A /* Extensions */,
 				7EF679A422F134CE00A847F9 /* Models */,
 				7EF679A322F134A900A847F9 /* Networking */,
 				7EF6799522F11D7600A847F9 /* Coordinators */,
@@ -132,6 +137,7 @@
 				7EF679B122F14CD100A847F9 /* View Models */,
 				7EF6799C22F128F000A847F9 /* Cells */,
 				7EF6799322F11C2100A847F9 /* Storyboards */,
+				7EEC90C022F24AB300DA1B8A /* Extensions */,
 				7EF6799222F11C0900A847F9 /* Supporting Files */,
 			);
 			path = Source;
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				7EEC90C122F24AC100DA1B8A /* UIView+NibLoading.swift */,
+				7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +179,22 @@
 				7EEC90C822F2999200DA1B8A /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EEC90CD22F29F2B00DA1B8A /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC90D022F2A03F00DA1B8A /* SeatGeek.swift */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		7EEC90CF22F2A01900DA1B8A /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC90D622F2A48400DA1B8A /* APICredentialsPlugin.swift */,
+			);
+			path = Plugins;
 			sourceTree = "<group>";
 		};
 		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
@@ -223,6 +246,8 @@
 		7EF679A322F134A900A847F9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC90CD22F29F2B00DA1B8A /* Targets */,
+				7EEC90CF22F2A01900DA1B8A /* Plugins */,
 				7EEC90BF22F2388000DA1B8A /* ImageFetcher */,
 			);
 			path = Networking;
@@ -398,12 +423,15 @@
 				7EF679A622F134E200A847F9 /* EventRemote.swift in Sources */,
 				7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */,
 				7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */,
+				7EEC90D822F2A66A00DA1B8A /* APICredentialsPlugin.swift in Sources */,
 				7EF679B522F1DB3900A847F9 /* EventSearching.swift in Sources */,
 				7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */,
 				7EEC90BE22F2365E00DA1B8A /* UIImageView+ImageFetcher.swift in Sources */,
 				7EEC90B822F21D6A00DA1B8A /* MockEventSearchViewModel.swift in Sources */,
 				7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
+				7EEC90DE22F2A77E00DA1B8A /* SeatGeek.swift in Sources */,
+				7EEC90DB22F2A6D800DA1B8A /* URL+QueryItems.swift in Sources */,
 				7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */,
 				7EEC90C222F24AC100DA1B8A /* UIView+NibLoading.swift in Sources */,
 				7EF679A122F1293A00A847F9 /* SearchResultCell.swift in Sources */,
