@@ -52,7 +52,7 @@ class SearchViewController: UITableViewController, Storyboarded {
             case .searching:
                 print("searching: show activity indicator")
             case .loaded:
-                print("loaded: hide empty state")
+                print("loaded: hide empty state and activity indicator")
                 self.events = self.viewModel.events
                 self.tableView.reloadData()
             case .loadingMore:

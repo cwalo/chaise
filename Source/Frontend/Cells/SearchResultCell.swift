@@ -31,6 +31,7 @@ class SearchResultCell: UITableViewCell, NibLoading {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        eventImageView.layer.cornerRadius = 10
         favoriteIcon.image = UIImage(named: "like")?.withRenderingMode(.alwaysTemplate)
         favoriteIcon.tintColor = .red
     }
