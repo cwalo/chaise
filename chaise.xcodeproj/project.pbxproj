@@ -31,6 +31,10 @@
 		7EEC90F222F372F600DA1B8A /* SeatGeekDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */; };
 		7EEC90F322F372FD00DA1B8A /* SeatGeekSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */; };
 		7EEC90F622F37B9000DA1B8A /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90F522F37B9000DA1B8A /* Throttler.swift */; };
+		7EEC90F822F37D7B00DA1B8A /* EventSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */; };
+		7EEC90FA22F3840B00DA1B8A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C622F2999200DA1B8A /* Alamofire.framework */; };
+		7EEC90FB22F3840B00DA1B8A /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C722F2999200DA1B8A /* Moya.framework */; };
+		7EEC90FC22F3840B00DA1B8A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC90C822F2999200DA1B8A /* Result.framework */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -84,6 +88,7 @@
 		7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekDataMock.swift; sourceTree = "<group>"; };
 		7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeatGeekSearch.json; sourceTree = "<group>"; };
 		7EEC90F522F37B9000DA1B8A /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchViewModelTests.swift; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEC90FA22F3840B00DA1B8A /* Alamofire.framework in Frameworks */,
+				7EEC90FB22F3840B00DA1B8A /* Moya.framework in Frameworks */,
+				7EEC90FC22F3840B00DA1B8A /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +169,7 @@
 				7E0B210A22F008B70061B2D7 /* SearchResultCellTests.swift */,
 				7EEC90C322F2532D00DA1B8A /* DetailViewControllerTests.swift */,
 				7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */,
+				7EEC90F722F37D7B00DA1B8A /* EventSearchViewModelTests.swift */,
 				7E0B210C22F008B70061B2D7 /* Info.plist */,
 			);
 			path = chaiseTests;
@@ -477,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0B210B22F008B70061B2D7 /* SearchResultCellTests.swift in Sources */,
+				7EEC90F822F37D7B00DA1B8A /* EventSearchViewModelTests.swift in Sources */,
 				7EEC90ED22F363F100DA1B8A /* ISO8601NoZuluTests.swift in Sources */,
 				7EEC90C422F2532D00DA1B8A /* DetailViewControllerTests.swift in Sources */,
 			);
@@ -679,11 +689,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = chaiseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"\"$(PROJECT_DIR)/Carthage/Build/iOS\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coreywalo.chaiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,11 +715,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TGW6PA8S8E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = chaiseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"\"$(PROJECT_DIR)/Carthage/Build/iOS\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coreywalo.chaiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

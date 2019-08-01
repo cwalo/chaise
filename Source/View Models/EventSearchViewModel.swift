@@ -69,7 +69,6 @@ final class EventSearchViewModel: EventSearching {
                 switch result {
                 case .success(let response):
                     let data = response.data
-                    print(try! response.mapJSON())
                     do {
                         let decoder = JSONDecoder()
                         decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())

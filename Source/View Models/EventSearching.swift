@@ -16,6 +16,26 @@ enum SearchState {
     case error(Error)
 }
 
+extension SearchState: Equatable {
+
+    static func == (lhs: SearchState, rhs: SearchState) -> Bool {
+        switch (lhs, rhs) {
+        case (.initial, .initial):
+            return true
+        case (.searching, .searching):
+            return true
+        case (.loadingMore, .loadingMore):
+            return true
+        case (.loaded, .loaded):
+            return true
+        case (.error, .error):
+            return true
+        default:
+            return false
+        }
+    }
+}
+
 protocol EventSearching: AnyObject {
     var state: SearchState { get set }
     var events: [EventEntity] { get set }
