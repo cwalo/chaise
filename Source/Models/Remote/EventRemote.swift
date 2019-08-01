@@ -20,7 +20,7 @@ struct EventRemote: Codable {
         case venue
     }
 
-    var date: Date
+    var date: Date?
     var id: Int
     var isTimeTBD: Bool
     var isDateTBD: Bool

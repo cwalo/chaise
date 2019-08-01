@@ -26,6 +26,7 @@
 		7EEC90DB22F2A6D800DA1B8A /* URL+QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */; };
 		7EEC90DE22F2A77E00DA1B8A /* SeatGeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90D022F2A03F00DA1B8A /* SeatGeek.swift */; };
 		7EEC90E822F3353500DA1B8A /* SeatGeekCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */; };
+		7EEC90EB22F349C500DA1B8A /* DateFormatter+ISONoZulu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90E922F3490700DA1B8A /* DateFormatter+ISONoZulu.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -74,6 +75,7 @@
 		7EEC90D622F2A48400DA1B8A /* APICredentialsPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentialsPlugin.swift; sourceTree = "<group>"; };
 		7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryItems.swift"; sourceTree = "<group>"; };
 		7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekCredentials.swift; sourceTree = "<group>"; };
+		7EEC90E922F3490700DA1B8A /* DateFormatter+ISONoZulu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+ISONoZulu.swift"; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				7EEC90C122F24AC100DA1B8A /* UIView+NibLoading.swift */,
 				7EEC90D922F2A6AF00DA1B8A /* URL+QueryItems.swift */,
+				7EEC90E922F3490700DA1B8A /* DateFormatter+ISONoZulu.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				7EEC90BC22F2349300DA1B8A /* ImageFetcher.swift in Sources */,
 				7E0B20F822F008B50061B2D7 /* SearchViewController.swift in Sources */,
 				7EEC90E822F3353500DA1B8A /* SeatGeekCredentials.swift in Sources */,
+				7EEC90EB22F349C500DA1B8A /* DateFormatter+ISONoZulu.swift in Sources */,
 				7EF679A622F134E200A847F9 /* EventRemote.swift in Sources */,
 				7EF679AA22F1383B00A847F9 /* EventsRemote.swift in Sources */,
 				7EF679A822F134EC00A847F9 /* EventEntity.swift in Sources */,

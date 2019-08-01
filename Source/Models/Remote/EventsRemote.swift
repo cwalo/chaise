@@ -22,6 +22,6 @@ struct ResponseMeta: Codable {
 }
 
 struct EventsRemote: Codable {
-    var meta: ResponseMeta?
+    var meta: ResponseMeta
     var events: [EventRemote]
 }

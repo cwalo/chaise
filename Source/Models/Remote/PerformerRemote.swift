@@ -15,6 +15,6 @@ struct PerformerRemote: Codable {
         case isPrimary = "primary"
     }
 
-    var image: URL
-    var isPrimary: Bool
+    var image: URL?
+    var isPrimary: Bool?
 }

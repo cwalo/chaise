@@ -13,11 +13,22 @@ struct EventEntity: Codable {
     var id: Int
     var title: String
     var location: String
-    var date: Date
+    var date: Date?
     var isTBD: Bool
-    var imageURL: URL
-    var isFavorite: Bool
+    var imageURL: URL?
+    var isFavorite: Bool = false
     
+}
+
+extension EventEntity {
+    init(_ remote: EventRemote) {
+        self.id = remote.id
+        self.title = remote.title
+        self.location = remote.venue.location
+        self.date = remote.date
+        self.isTBD = remote.isDateTBD || remote.isTimeTBD
+        self.imageURL = remote.performers.first(where: { $0.isPrimary ?? false })?.image
+    }
 }
 
 extension EventEntity {

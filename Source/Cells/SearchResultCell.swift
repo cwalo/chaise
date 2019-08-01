@@ -9,10 +9,10 @@
 import UIKit
 
 struct SearchResultCellData {
-    let imageURL: URL
+    let imageURL: URL?
     let title: String
     let location: String
-    let date: Date
+    let date: Date?
 }
 
 class SearchResultCell: UITableViewCell, NibLoading {
@@ -36,7 +36,10 @@ class SearchResultCell: UITableViewCell, NibLoading {
     func configure(with data: SearchResultCellData) {
         titleLabel.text = data.title
         locationLabel.text = data.location
-        dateLabel.text = data.date.description
-        eventImageView.setImage(from: data.imageURL)
+        dateLabel.text = data.date?.description ?? "TBD"
+
+        if let imageURL = data.imageURL {
+            eventImageView.setImage(from: imageURL)
+        }
     }
 }
