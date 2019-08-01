@@ -17,6 +17,8 @@ final class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController
 
+    var favoritesManager = FavoritesManager()
+
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
 
@@ -28,7 +30,9 @@ final class AppCoordinator: Coordinator {
         let searchVC = SearchViewController.instantiate()
         let apiPlugin = APICredentialsPlugin(credentials: SeatGeekCredentials.credentials)
         let provider = MoyaProvider<SeatGeek>(plugins: [apiPlugin])
-        searchVC.viewModel = EventSearchViewModel(provider)
+        let viewModel = EventSearchViewModel(provider)
+        viewModel.favoritesManager = favoritesManager
+        searchVC.viewModel = viewModel
         searchVC.coordinator = self
         navigationController.pushViewController(searchVC, animated: true)
     }
@@ -38,6 +42,7 @@ extension AppCoordinator: EventSelecting {
     func didSelectEvent(_ event: EventEntity) {
         let detailVC = DetailViewController.instantiate()
         detailVC.event = event
+        detailVC.favoritesManager = favoritesManager
         navigationController.pushViewController(detailVC, animated: true)
     }
 }

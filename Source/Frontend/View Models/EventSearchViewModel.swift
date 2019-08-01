@@ -31,6 +31,8 @@ final class EventSearchViewModel: EventSearching {
         }
     }
 
+    var favoritesManager: FavoritesManager!
+
     let throttler = Throttler(minimumDelay: 0.2, queue: .global(qos: .userInteractive))
 
     var searchTerm: String = ""
@@ -76,7 +78,11 @@ final class EventSearchViewModel: EventSearching {
                         self.currentPage = eventsReponse.meta.page
                         self.totalEvents = eventsReponse.meta.total
                         let events = eventsReponse.events
-                        deferredEvents = events.map { EventEntity($0) }
+                        deferredEvents = events.map {
+                            var entity = EventEntity($0)
+                            entity.isFavorite = self.favoritesManager.isFavorite($0.id)
+                            return entity
+                        }
                         deferredState = .loaded
                     } catch {
                         deferredState = .error(error)

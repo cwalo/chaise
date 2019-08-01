@@ -34,6 +34,7 @@ final class EventSearchViewModelTests: XCTestCase {
     func testSearchingState() {
         let provider = MoyaProvider<SeatGeek>(stubClosure: MoyaProvider.delayedStub(60))
         viewModel = EventSearchViewModel(provider)
+        viewModel.favoritesManager = FavoritesManager()
 
         var stateQueue: [SearchState] = []
 
@@ -58,6 +59,7 @@ final class EventSearchViewModelTests: XCTestCase {
     func testSearchingToLoadedState() {
         let provider = MoyaProvider<SeatGeek>(stubClosure: MoyaProvider.immediatelyStub)
         viewModel = EventSearchViewModel(provider)
+        viewModel.favoritesManager = FavoritesManager()
 
         var stateQueue: [SearchState] = []
 
@@ -81,6 +83,7 @@ final class EventSearchViewModelTests: XCTestCase {
     func testLoadingMoreState() {
         let provider = MoyaProvider<SeatGeek>(stubClosure: MoyaProvider.immediatelyStub)
         viewModel = EventSearchViewModel(provider)
+        viewModel.favoritesManager = FavoritesManager()
 
         var stateQueue: [SearchState] = []
 

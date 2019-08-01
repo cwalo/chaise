@@ -56,6 +56,10 @@ final class FavoritesManager: JSONFileStoring {
 
     private (set) var favorites: [Favorite] = []
 
+    deinit {
+        writeFavoritesToDisk()
+    }
+
     init() {
         do {
             favorites = try get(type: [Favorite].self, from: FavoritesManager.FavoritesFile)
@@ -64,12 +68,12 @@ final class FavoritesManager: JSONFileStoring {
         }
 
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(FavoritesManager.applicationDidMoveToBackground),
+                                               selector: #selector(FavoritesManager.writeFavoritesToDisk),
                                                name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     @objc
-    private func applicationDidMoveToBackground() {
+    private func writeFavoritesToDisk() {
         do {
             try write(data: favorites, to: FavoritesManager.FavoritesFile)
         } catch {
@@ -85,5 +89,9 @@ final class FavoritesManager: JSONFileStoring {
     func unfavorite(_ id: Int) {
         guard let index = favorites.firstIndex(where: { $0.id == id }) else { return }
         favorites.remove(at: index)
+    }
+
+    func isFavorite(_ id: Int) -> Bool {
+        return favorites.contains(where: { $0.id == id })
     }
 }

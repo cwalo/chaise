@@ -10,7 +10,12 @@ import UIKit
 
 class DetailViewController: UIViewController, Storyboarded {
 
-    var event: EventEntity!
+    var event: EventEntity! {
+        didSet {
+            navigationItem.rightBarButtonItem?.tintColor = event.isFavorite ? .red : .darkGray
+        }
+    }
+    var favoritesManager: FavoritesManager!
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -18,6 +23,17 @@ class DetailViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        assert(event != nil)
+        assert(favoritesManager != nil)
+
+        let image = UIImage(named: "like")?.withRenderingMode(.alwaysTemplate)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(DetailViewController.didPressLikeButton))
+
+        navigationItem.rightBarButtonItem?.tintColor = event.isFavorite ? .red : .darkGray
 
         title = event.title
 
@@ -34,6 +50,19 @@ class DetailViewController: UIViewController, Storyboarded {
         }
 
         locationLabel.text = event.location
+    }
+
+    @objc
+    func didPressLikeButton() {
+        var eventCopy = event
+        eventCopy?.isFavorite = !event.isFavorite
+        event = eventCopy
+
+        if event.isFavorite {
+            favoritesManager.favorite(event.id)
+        } else {
+            favoritesManager.unfavorite(event.id)
+        }
     }
     
 }

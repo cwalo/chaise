@@ -21,6 +21,7 @@ class DetailViewControllerTests: XCTestCase {
 
     func testConfigure() {
         viewController.event = event
+        viewController.favoritesManager = FavoritesManager()
         _ = viewController.view // trigger viewDidLoad
 
         let formatter = DateFormatter()
