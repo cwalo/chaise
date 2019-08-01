@@ -24,6 +24,8 @@ class SearchResultCellTests: XCTestCase {
                                         title: title,
                                         location: location,
                                         date: date)
+
+        cell = SearchResultCell.instantiate()
     }
 
     override func tearDown() {
@@ -31,17 +33,29 @@ class SearchResultCellTests: XCTestCase {
     }
 
     func testConfigure() {
-        cell = SearchResultCell.instantiate()
         cell.configure(with: cellData)
 
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        let formattedDate = cellData.date != nil ? formatter.string(from: cellData.date!) : "TBD"
+        let formattedDate = formatter.string(from: cellData.date!)
 
-        XCTAssertTrue(cell.titleLabel.text == cellData.title, "SearchResultCell titleLabel.text is not configured")
-        XCTAssertTrue(cell.locationLabel.text == cellData.location, "SearchResultCell locationLabel.text is not configured")
-        XCTAssertTrue(cell.dateLabel.text == formattedDate, "SearchResultCell dateLabel.text is not configured")
+        XCTAssertEqual(cell.titleLabel.text, cellData.title)
+        XCTAssertEqual(cell.locationLabel.text, cellData.location)
+        XCTAssertEqual(cell.dateLabel.text, formattedDate)
         // FIXME: Handle imageView - Requires us to swap ImageFetcher with something mocked
+    }
+
+    func testConfigureNilDate() {
+        cellData = SearchResultCellData(imageURL: cellData.imageURL,
+                                        title: cellData.title,
+                                        location: cellData.location,
+                                        date: nil)
+
+        cell.configure(with: cellData)
+
+        XCTAssertEqual(cell.titleLabel.text, cellData.title)
+        XCTAssertEqual(cell.locationLabel.text, cellData.location)
+        XCTAssertEqual(cell.dateLabel.text, "TBD")
     }
 
     func testPrepareForReuse() {
@@ -49,10 +63,10 @@ class SearchResultCellTests: XCTestCase {
         cell.configure(with: cellData)
         cell.prepareForReuse()
 
-        XCTAssertTrue(cell.titleLabel.text == nil, "SearchResultCell titleLabel is not prepared for reuse")
-        XCTAssertTrue(cell.locationLabel.text == nil, "SearchResultCell locationLabel is not prepared for reuse")
-        XCTAssertTrue(cell.dateLabel.text == nil, "SearchResultCell dateLabel is not prepared for reuse")
-        XCTAssertTrue(cell.eventImageView.image == nil, "SearchResultCell eventImageView is not prepared for reuse")
+        XCTAssertNil(cell.titleLabel.text, "SearchResultCell titleLabel is not prepared for reuse")
+        XCTAssertNil(cell.locationLabel.text, "SearchResultCell locationLabel is not prepared for reuse")
+        XCTAssertNil(cell.dateLabel.text, "SearchResultCell dateLabel is not prepared for reuse")
+        XCTAssertNil(cell.eventImageView.image, "SearchResultCell eventImageView is not prepared for reuse")
     }
 
 
