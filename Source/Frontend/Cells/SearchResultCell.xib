@@ -50,14 +50,24 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-PI-UBg">
+                        <rect key="frame" x="8" y="4" width="30" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="9J2-XM-krh"/>
+                            <constraint firstAttribute="height" constant="30" id="g6r-pq-T1W"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="r3P-u5-MVX" secondAttribute="bottom" constant="14.5" id="3xO-4v-gvg"/>
                     <constraint firstItem="LEw-C3-Wo3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="A6Q-yS-uq1"/>
                     <constraint firstItem="r3P-u5-MVX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aOw-tw-DqA"/>
                     <constraint firstItem="r3P-u5-MVX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="bqQ-NM-waI"/>
+                    <constraint firstItem="0Ka-PI-UBg" firstAttribute="top" secondItem="r3P-u5-MVX" secondAttribute="top" constant="-11" id="c8S-b1-oPu"/>
                     <constraint firstItem="LEw-C3-Wo3" firstAttribute="leading" secondItem="r3P-u5-MVX" secondAttribute="trailing" constant="8" id="db4-02-OOO"/>
                     <constraint firstAttribute="trailing" secondItem="LEw-C3-Wo3" secondAttribute="trailing" constant="20" id="hpn-VD-s9Z"/>
+                    <constraint firstItem="0Ka-PI-UBg" firstAttribute="leading" secondItem="r3P-u5-MVX" secondAttribute="leading" constant="-12" id="vz4-Ty-1MZ"/>
                     <constraint firstAttribute="bottom" secondItem="LEw-C3-Wo3" secondAttribute="bottom" constant="13.5" id="wF5-ez-feQ"/>
                 </constraints>
             </tableViewCellContentView>
@@ -65,6 +75,7 @@
             <connections>
                 <outlet property="dateLabel" destination="CrE-aG-9Nz" id="UBR-Km-mbm"/>
                 <outlet property="eventImageView" destination="r3P-u5-MVX" id="FiY-xp-UsC"/>
+                <outlet property="favoriteIcon" destination="0Ka-PI-UBg" id="zqe-MP-hoV"/>
                 <outlet property="locationLabel" destination="anC-ip-u1i" id="Y2X-XW-VAb"/>
                 <outlet property="titleLabel" destination="dFW-df-Wdq" id="RBm-HX-1LB"/>
             </connections>

@@ -13,6 +13,7 @@ struct SearchResultCellData {
     let title: String
     let location: String
     let date: Date?
+    let isFavorite: Bool
 }
 
 class SearchResultCell: UITableViewCell, NibLoading {
@@ -21,9 +22,17 @@ class SearchResultCell: UITableViewCell, NibLoading {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var favoriteIcon: UIImageView!
 
     static var reuseIdentifier: String {
         return "SearchResultCell"
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        favoriteIcon.image = UIImage(named: "like")?.withRenderingMode(.alwaysTemplate)
+        favoriteIcon.tintColor = .red
     }
 
     override func prepareForReuse() {
@@ -31,11 +40,13 @@ class SearchResultCell: UITableViewCell, NibLoading {
         locationLabel.text = nil
         dateLabel.text = nil
         eventImageView.image = nil
+        favoriteIcon.isHidden = true
     }
 
     func configure(with data: SearchResultCellData) {
         titleLabel.text = data.title
         locationLabel.text = data.location
+        favoriteIcon.isHidden = !data.isFavorite
 
         if let date = data.date {
             let formatter = DateFormatter()

@@ -90,7 +90,8 @@ class SearchViewController: UITableViewController, Storyboarded {
         let cellData = SearchResultCellData(imageURL: item.imageURL,
                                             title: item.title,
                                             location: item.location,
-                                            date: item.date)
+                                            date: item.date,
+                                            isFavorite: item.isFavorite)
         cell.configure(with: cellData)
 
         return cell
