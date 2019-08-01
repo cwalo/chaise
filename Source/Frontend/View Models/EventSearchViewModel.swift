@@ -43,6 +43,11 @@ final class EventSearchViewModel: EventSearching {
 
     init(_ provider: MoyaProvider<SeatGeek>) {
         self.provider = provider
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(EventSearchViewModel.handleFavoritesChangedNotification(_:)),
+                                               name: FavoritesManager.FavoritesChangedNotification,
+                                               object: nil)
     }
 
     func search(for term: String) {
@@ -126,7 +131,11 @@ final class EventSearchViewModel: EventSearching {
                     self.currentPage = eventsReponse.meta.page
                     self.totalEvents = eventsReponse.meta.total
                     let events = eventsReponse.events
-                    deferredEvents = events.map { EventEntity($0) }
+                    deferredEvents = events.map {
+                        var entity = EventEntity($0)
+                        entity.isFavorite = self.favoritesManager.isFavorite($0.id)
+                        return entity
+                    }
                     deferredState = .loaded
                 } catch {
                     deferredState = .error(error)
@@ -134,6 +143,20 @@ final class EventSearchViewModel: EventSearching {
             case .failure(let error):
                 deferredState = .error(error)
             }
+        }
+    }
+
+    @objc
+    func handleFavoritesChangedNotification(_ notification: Notification) {
+        let updatedEvents: [EventEntity] = events.map {
+            var updatedEntity = $0
+            updatedEntity.isFavorite = self.favoritesManager.isFavorite($0.id)
+            return updatedEntity
+        }
+
+        DispatchQueue.main.async {
+            self.events = updatedEvents
+            self.state = .loaded
         }
     }
 }

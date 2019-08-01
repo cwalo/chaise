@@ -52,9 +52,15 @@ struct Favorite: Codable {
 
 final class FavoritesManager: JSONFileStoring {
 
+    static let FavoritesChangedNotification = Notification.Name(rawValue: "FavoritesChangedNotification")
+
     static let FavoritesFile = "SeakGeekFavorites"
 
-    private (set) var favorites: [Favorite] = []
+    private (set) var favorites: [Favorite] = [] {
+        didSet {
+            NotificationCenter.default.post(name: FavoritesManager.FavoritesChangedNotification, object: nil)
+        }
+    }
 
     deinit {
         writeFavoritesToDisk()
@@ -72,15 +78,6 @@ final class FavoritesManager: JSONFileStoring {
                                                name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
-    @objc
-    private func writeFavoritesToDisk() {
-        do {
-            try write(data: favorites, to: FavoritesManager.FavoritesFile)
-        } catch {
-            print(error)
-        }
-    }
-
     func favorite(_ id: Int) {
         if favorites.contains(where: { $0.id == id }) { return }
         favorites.append(Favorite(id: id))
@@ -93,5 +90,14 @@ final class FavoritesManager: JSONFileStoring {
 
     func isFavorite(_ id: Int) -> Bool {
         return favorites.contains(where: { $0.id == id })
+    }
+
+    @objc
+    private func writeFavoritesToDisk() {
+        do {
+            try write(data: favorites, to: FavoritesManager.FavoritesFile)
+        } catch {
+            print(error)
+        }
     }
 }
