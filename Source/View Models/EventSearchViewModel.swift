@@ -11,7 +11,7 @@ import Moya
 
 final class EventSearchViewModel: EventSearching {
 
-    var provider: MoyaProvider<SeatGeek>
+    let provider: MoyaProvider<SeatGeek>
 
     var state: SearchState = .initial {
         didSet {
@@ -31,6 +31,8 @@ final class EventSearchViewModel: EventSearching {
         }
     }
 
+    let throttler = Throttler(minimumDelay: 0.2, queue: .global(qos: .userInteractive))
+
     var searchTerm: String = ""
 
     var currentPage: Int = 1
@@ -49,38 +51,45 @@ final class EventSearchViewModel: EventSearching {
 
         state = .searching
 
-        provider.request(target) { [weak self] result in
-            guard let self = self else { return }
+        let request = {
 
-            var deferredState: SearchState = self.state
-            var deferredEvents: [EventEntity] = []
+            self.provider.request(target) { [weak self] result in
+                guard let self = self else { return }
 
-            defer {
-                DispatchQueue.main.async {
-                    self.events = deferredEvents
-                    self.state = deferredState
+                var deferredState: SearchState = self.state
+                var deferredEvents: [EventEntity] = []
+
+                defer {
+                    DispatchQueue.main.async {
+                        self.events = deferredEvents
+                        self.state = deferredState
+                    }
                 }
-            }
 
-            switch result {
-            case .success(let response):
-                let data = response.data
-                print(try! response.mapJSON())
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())
-                    let eventsReponse = try decoder.decode(EventsRemote.self, from: data)
-                    self.currentPage = eventsReponse.meta.page
-                    self.totalEvents = eventsReponse.meta.total
-                    let events = eventsReponse.events
-                    deferredEvents = events.map { EventEntity($0) }
-                    deferredState = .loaded
-                } catch {
+                switch result {
+                case .success(let response):
+                    let data = response.data
+                    print(try! response.mapJSON())
+                    do {
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())
+                        let eventsReponse = try decoder.decode(EventsRemote.self, from: data)
+                        self.currentPage = eventsReponse.meta.page
+                        self.totalEvents = eventsReponse.meta.total
+                        let events = eventsReponse.events
+                        deferredEvents = events.map { EventEntity($0) }
+                        deferredState = .loaded
+                    } catch {
+                        deferredState = .error(error)
+                    }
+                case .failure(let error):
                     deferredState = .error(error)
                 }
-            case .failure(let error):
-                deferredState = .error(error)
             }
+        }
+
+        throttler.throttle {
+            _ = request()
         }
     }
 

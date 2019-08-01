@@ -30,6 +30,7 @@
 		7EEC90ED22F363F100DA1B8A /* ISO8601NoZuluTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */; };
 		7EEC90F222F372F600DA1B8A /* SeatGeekDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */; };
 		7EEC90F322F372FD00DA1B8A /* SeatGeekSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */; };
+		7EEC90F622F37B9000DA1B8A /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC90F522F37B9000DA1B8A /* Throttler.swift */; };
 		7EF6799722F11D9D00A847F9 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799622F11D9D00A847F9 /* Storyboarded.swift */; };
 		7EF6799922F11E8B00A847F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799822F11E8B00A847F9 /* Coordinator.swift */; };
 		7EF6799B22F11EE400A847F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */; };
@@ -82,6 +83,7 @@
 		7EEC90EC22F363F100DA1B8A /* ISO8601NoZuluTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601NoZuluTests.swift; sourceTree = "<group>"; };
 		7EEC90EE22F36D8600DA1B8A /* SeatGeekDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekDataMock.swift; sourceTree = "<group>"; };
 		7EEC90F022F36F0D00DA1B8A /* SeatGeekSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeatGeekSearch.json; sourceTree = "<group>"; };
+		7EEC90F522F37B9000DA1B8A /* Throttler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		7EF6799622F11D9D00A847F9 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7EF6799822F11E8B00A847F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7EF6799A22F11EE400A847F9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
+		7EEC90F422F37B3600DA1B8A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC90F522F37B9000DA1B8A /* Throttler.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 		7EF679A322F134A900A847F9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7EEC90F422F37B3600DA1B8A /* Utilities */,
 				7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */,
 				7EEC90CD22F29F2B00DA1B8A /* Targets */,
 				7EEC90CF22F2A01900DA1B8A /* Plugins */,
@@ -449,6 +460,7 @@
 				7EF679B322F14CDE00A847F9 /* EventSearchViewModel.swift in Sources */,
 				7E0B20F622F008B50061B2D7 /* AppDelegate.swift in Sources */,
 				7EEC90DE22F2A77E00DA1B8A /* SeatGeek.swift in Sources */,
+				7EEC90F622F37B9000DA1B8A /* Throttler.swift in Sources */,
 				7EEC90DB22F2A6D800DA1B8A /* URL+QueryItems.swift in Sources */,
 				7EF679AE22F1413D00A847F9 /* VenueRemote.swift in Sources */,
 				7EEC90C222F24AC100DA1B8A /* UIView+NibLoading.swift in Sources */,
