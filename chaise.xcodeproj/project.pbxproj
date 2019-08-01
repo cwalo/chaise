@@ -150,11 +150,7 @@
 				7E0B20F522F008B50061B2D7 /* AppDelegate.swift */,
 				7EF679A422F134CE00A847F9 /* Models */,
 				7EF679A322F134A900A847F9 /* Networking */,
-				7EF6799522F11D7600A847F9 /* Coordinators */,
-				7EF6799422F11C3300A847F9 /* View Controllers */,
-				7EF679B122F14CD100A847F9 /* View Models */,
-				7EF6799C22F128F000A847F9 /* Cells */,
-				7EF6799322F11C2100A847F9 /* Storyboards */,
+				7EEC90FD22F38EAF00DA1B8A /* Frontend */,
 				7EEC90C022F24AB300DA1B8A /* Extensions */,
 				7EF6799222F11C0900A847F9 /* Supporting Files */,
 			);
@@ -227,6 +223,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		7EEC90FD22F38EAF00DA1B8A /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				7EF6799522F11D7600A847F9 /* Coordinators */,
+				7EF6799422F11C3300A847F9 /* View Controllers */,
+				7EF679B122F14CD100A847F9 /* View Models */,
+				7EF6799C22F128F000A847F9 /* Cells */,
+				7EF6799322F11C2100A847F9 /* Storyboards */,
+			);
+			path = Frontend;
+			sourceTree = "<group>";
+		};
 		7EF6799222F11C0900A847F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,11 +285,11 @@
 		7EF679A322F134A900A847F9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7EEC90F422F37B3600DA1B8A /* Utilities */,
 				7EEC90E422F3342200DA1B8A /* SeatGeekCredentials.swift */,
 				7EEC90CD22F29F2B00DA1B8A /* Targets */,
 				7EEC90CF22F2A01900DA1B8A /* Plugins */,
 				7EEC90BF22F2388000DA1B8A /* ImageFetcher */,
+				7EEC90F422F37B3600DA1B8A /* Utilities */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
