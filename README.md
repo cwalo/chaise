@@ -19,4 +19,4 @@ I hope the project is fairly straightforward to navigate, but a few things to po
 * The FavoritesManager is an abstracted  JSON file reader/writer. Objects can favorite and unfavorite. Objects can listen for changes via `NotificationCenter` notifications. To avoid superfuous file I/O, it will only write to disk when the application is sent to the background or when `deinit` is called. To top it off, because the favorites file is stored in the `libraryDirectory` favorites are synced across devices.
 * I've added _some_ tests to exhibit the test-able nature of the app. I can easily verify views are configured properly without needing to create any remote model objects. I verify that our custom date formatter parses the expected date string correctly. I also test the SearchViewModel reports expected states back to the controller. FavoriteManager has some simple API interface tests.
 	* Tests TODO: more SearchViewModel tests, more unhappy cases
-
+* Print logs while searching are intentional to highlight additional things I would show/do in the UI
