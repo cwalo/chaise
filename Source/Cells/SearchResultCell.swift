@@ -15,7 +15,7 @@ struct SearchResultCellData {
     let date: Date
 }
 
-class SearchResultCell: UITableViewCell {
+class SearchResultCell: UITableViewCell, NibLoading {
 
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,9 +27,9 @@ class SearchResultCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        titleLabel.text = ""
-        locationLabel.text = ""
-        dateLabel.text = ""
+        titleLabel.text = nil
+        locationLabel.text = nil
+        dateLabel.text = nil
         eventImageView.image = nil
     }
 
