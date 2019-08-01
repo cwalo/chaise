@@ -1,7 +1,7 @@
 # Chaise
 --
 
-## Installation
+## Setup
 * If `Carthage` is not installed: `brew install carthage`
 * `carthage bootstrap --platform iOS`
 * In `Source/Networking/SeatGeekCredentials`, add your API `client_id`.
