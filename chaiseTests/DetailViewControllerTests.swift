@@ -23,8 +23,12 @@ class DetailViewControllerTests: XCTestCase {
         viewController.event = event
         _ = viewController.view // trigger viewDidLoad
 
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let formattedDate = event.date != nil ? formatter.string(from: event.date!) : "TBD"
+
         XCTAssertTrue(viewController.title == event.title, "DetailViewController title is not configured")
-        XCTAssertTrue(viewController.dateLabel.text == event.date.description, "DetailViewController dateLabel is not configured")
+        XCTAssertTrue(viewController.dateLabel.text == formattedDate, "DetailViewController dateLabel is not configured")
         XCTAssertTrue(viewController.locationLabel.text == event.location, "DetailViewController locationLabel is not configured")
         // FIXME: Handle image
     }

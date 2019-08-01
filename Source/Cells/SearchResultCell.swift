@@ -36,7 +36,14 @@ class SearchResultCell: UITableViewCell, NibLoading {
     func configure(with data: SearchResultCellData) {
         titleLabel.text = data.title
         locationLabel.text = data.location
-        dateLabel.text = data.date?.description ?? "TBD"
+
+        if let date = data.date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            dateLabel.text = formatter.string(from: date)
+        } else {
+            dateLabel.text = "TBD"
+        }
 
         if let imageURL = data.imageURL {
             eventImageView.setImage(from: imageURL)

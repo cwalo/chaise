@@ -68,7 +68,7 @@ final class EventSearchViewModel: EventSearching {
                 print(try! response.mapJSON())
                 do {
                     let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu)
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())
                     let eventsReponse = try decoder.decode(EventsRemote.self, from: data)
                     self.currentPage = eventsReponse.meta.page
                     self.totalEvents = eventsReponse.meta.total
@@ -107,7 +107,7 @@ final class EventSearchViewModel: EventSearching {
                 let data = response.data
                 do {
                     let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu)
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())
                     let eventsReponse = try decoder.decode(EventsRemote.self, from: data)
                     self.currentPage = eventsReponse.meta.page
                     self.totalEvents = eventsReponse.meta.total

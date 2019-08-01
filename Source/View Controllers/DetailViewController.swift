@@ -24,7 +24,15 @@ class DetailViewController: UIViewController, Storyboarded {
         if let imageURL = event.imageURL {
             imageView.setImage(from: imageURL)
         }
-        dateLabel.text = String(describing: event.date)
+
+        if let date = event.date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            dateLabel.text = formatter.string(from: date)
+        } else {
+            dateLabel.text = "TBD"
+        }
+
         locationLabel.text = event.location
     }
     

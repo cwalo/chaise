@@ -34,9 +34,13 @@ class SearchResultCellTests: XCTestCase {
         cell = SearchResultCell.instantiate()
         cell.configure(with: cellData)
 
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let formattedDate = cellData.date != nil ? formatter.string(from: cellData.date!) : "TBD"
+
         XCTAssertTrue(cell.titleLabel.text == cellData.title, "SearchResultCell titleLabel.text is not configured")
         XCTAssertTrue(cell.locationLabel.text == cellData.location, "SearchResultCell locationLabel.text is not configured")
-        XCTAssertTrue(cell.dateLabel.text == cellData.date.description , "SearchResultCell dateLabel.text is not configured")
+        XCTAssertTrue(cell.dateLabel.text == formattedDate, "SearchResultCell dateLabel.text is not configured")
         // FIXME: Handle imageView - Requires us to swap ImageFetcher with something mocked
     }
 
