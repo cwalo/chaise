@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-enum  SeatGeek: TargetType {
+enum SeatGeek: TargetType {
 
     case search(term: String, page: Int)
 

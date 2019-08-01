@@ -16,7 +16,7 @@ enum SearchState {
     case error(Error)
 }
 
-protocol EventSearching {
+protocol EventSearching: AnyObject {
     var state: SearchState { get set }
     var events: [EventEntity] { get set }
     var canFetchMore: Bool { get }

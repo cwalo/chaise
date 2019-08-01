@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 protocol EventSelecting: AnyObject {
     func didSelectEvent(_ event: EventEntity)
@@ -25,8 +26,10 @@ final class AppCoordinator: Coordinator {
 
     func start() {
         let searchVC = SearchViewController.instantiate()
+        let apiPlugin = APICredentialsPlugin(credentials: SeatGeekCredentials.credentials)
+        let provider = MoyaProvider<SeatGeek>(plugins: [apiPlugin])
+        searchVC.viewModel = EventSearchViewModel(provider)
         searchVC.coordinator = self
-        searchVC.viewModel = MockEventSearchViewModel()
         navigationController.pushViewController(searchVC, animated: true)
     }
 }
