@@ -14,6 +14,7 @@ class SearchViewController: UITableViewController, Storyboarded {
 
     weak var coordinator: EventSelecting?
     var viewModel: EventSearching!
+    var events: [EventEntity] = []
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -52,6 +53,7 @@ class SearchViewController: UITableViewController, Storyboarded {
                 print("searching: show activity indicator")
             case .loaded:
                 print("loaded: hide empty state")
+                self.events = self.viewModel.events
                 self.tableView.reloadData()
             case .loadingMore:
                 print("loading more")
@@ -68,7 +70,7 @@ class SearchViewController: UITableViewController, Storyboarded {
     // MARK: UITableViewControllerDelegate & UITableViewControllerDatasource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.events.count
+        return events.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,7 +86,7 @@ class SearchViewController: UITableViewController, Storyboarded {
             viewModel.fetchMoreResults()
         }
 
-        let item = viewModel.events[row]
+        let item = events[row]
         let cellData = SearchResultCellData(imageURL: item.imageURL,
                                             title: item.title,
                                             location: item.location,
@@ -95,7 +97,7 @@ class SearchViewController: UITableViewController, Storyboarded {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = viewModel.events[indexPath.item]
+        let event = events[indexPath.item]
         coordinator?.didSelectEvent(event)
     }
 
