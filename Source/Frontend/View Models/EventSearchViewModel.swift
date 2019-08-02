@@ -56,7 +56,8 @@ final class EventSearchViewModel: EventSearching {
 
         state = .searching
 
-        let request = {
+        let request = { [weak self] in
+            guard let self = self else { return }
             self.search(for: term, page: 1) { events, state in
                 DispatchQueue.main.async {
                     self.events = events
