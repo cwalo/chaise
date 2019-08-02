@@ -53,47 +53,14 @@ final class EventSearchViewModel: EventSearching {
     func search(for term: String) {
 
         searchTerm = term
-        
-        let target = SeatGeek.search(term: term, page: 1)
 
         state = .searching
 
         let request = {
-
-            self.provider.request(target) { [weak self] result in
-                guard let self = self else { return }
-
-                var deferredState: SearchState = self.state
-                var deferredEvents: [EventEntity] = []
-
-                defer {
-                    DispatchQueue.main.async {
-                        self.events = deferredEvents
-                        self.state = deferredState
-                    }
-                }
-
-                switch result {
-                case .success(let response):
-                    let data = response.data
-                    do {
-                        let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .formatted(DateFormatter.ISO8601NoZulu())
-                        let eventsReponse = try decoder.decode(EventsRemote.self, from: data)
-                        self.currentPage = eventsReponse.meta.page
-                        self.totalEvents = eventsReponse.meta.total
-                        let events = eventsReponse.events
-                        deferredEvents = events.map {
-                            var entity = EventEntity($0)
-                            entity.isFavorite = self.favoritesManager.isFavorite($0.id)
-                            return entity
-                        }
-                        deferredState = .loaded
-                    } catch {
-                        deferredState = .error(error)
-                    }
-                case .failure(let error):
-                    deferredState = .error(error)
+            self.search(for: term, page: 1) { events, state in
+                DispatchQueue.main.async {
+                    self.events = events
+                    self.state = state
                 }
             }
         }
@@ -104,9 +71,20 @@ final class EventSearchViewModel: EventSearching {
     }
 
     func fetchMoreResults() {
-        let target = SeatGeek.search(term: searchTerm, page: currentPage + 1)
 
         state = .loadingMore
+
+        search(for: searchTerm, page: currentPage + 1) { events, state in
+            DispatchQueue.main.async {
+                self.events.append(contentsOf: events)
+                self.state = state
+            }
+        }
+    }
+
+    private func search(for term: String, page: Int, completion: @escaping ([EventEntity], SearchState) -> Void) {
+
+        let target = SeatGeek.search(term: searchTerm, page: page)
 
         provider.request(target) { [weak self] result in
             guard let self = self else { return }
@@ -115,10 +93,7 @@ final class EventSearchViewModel: EventSearching {
             var deferredEvents: [EventEntity] = []
 
             defer {
-                DispatchQueue.main.async {
-                    self.events.append(contentsOf: deferredEvents)
-                    self.state = deferredState
-                }
+                completion(deferredEvents, deferredState)
             }
 
             switch result {
