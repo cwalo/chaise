@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Throttler is used to throttle code execution. Useful when making many consecutive requests.
+*/
 final class Throttler {
 
     private var workItem: DispatchWorkItem = DispatchWorkItem(block: {})

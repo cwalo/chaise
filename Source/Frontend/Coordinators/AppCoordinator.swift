@@ -9,10 +9,14 @@
 import UIKit
 import Moya
 
+
 protocol EventSelecting: AnyObject {
     func didSelectEvent(_ event: EventEntity)
 }
 
+/**
+ AppCoordinator handles all routing and dependency injection throughout the app.
+*/
 final class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController

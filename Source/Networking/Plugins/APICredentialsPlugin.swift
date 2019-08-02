@@ -9,6 +9,9 @@
 import Foundation
 import Moya
 
+/**
+ APICredentialsPlugin is used to inject API credentials at the time of the request. You should add it as a plugin when creating a MoyaProvider, passing a closure returning a Dictionary of [String: String]
+*/
 struct APICredentialsPlugin: PluginType {
 
     typealias CredentialsClosure = () -> [String: String]

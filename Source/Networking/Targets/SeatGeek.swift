@@ -9,6 +9,9 @@
 import Foundation
 import Moya
 
+/**
+ SeatGeek TargetType describes the SeatGeek API interface, endpoints, methods, and parameters. It is used as a parameter when making a request with a MoyaProvider.
+*/
 enum SeatGeek: TargetType {
 
     case search(term: String, page: Int)

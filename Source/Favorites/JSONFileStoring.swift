@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ JSONFileStoring provides an interface for writing and retrieving Codable objects to disk.
+*/
 protocol JSONFileStoring {
     func write<T: Codable>(data: T, to fileNamed: String) throws
     func get<T: Codable>(type: T.Type, from fileNamed: String) throws -> T

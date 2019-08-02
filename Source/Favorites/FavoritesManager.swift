@@ -13,6 +13,9 @@ struct Favorite: Codable {
     let id: Int
 }
 
+/**
+ FavoritesManager conforms to JSONFileStoring to provide on disk storage of Favorites. To avoid superfluous file I/O, it only writes to disk when the app goes to the background or the class is deinitialized.
+*/
 final class FavoritesManager: JSONFileStoring {
 
     static let FavoritesChangedNotification = Notification.Name(rawValue: "FavoritesChangedNotification")

@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ EventEntity merges multiple Remote objects into a flattened object and respects local-only state, such as `isFavorite`.
+*/
 struct EventEntity: Codable {
 
     var id: Int
